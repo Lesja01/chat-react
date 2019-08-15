@@ -1,0 +1,154 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: rgb(222, 222, 226);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+.root {
+}
+.container {
+  /* display: flex; */
+  /* flex-direction: row; */
+}
+#subscribe {
+  display: flex;
+  margin: 0 auto;
+  width: 80%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.list_container {
+  margin: 0 auto;
+  margin-top: 100px;
+  height: 55vh;
+  width: 80%;
+  max-width: 600px;
+  overflow-y: scroll;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* margin: 0 auto; */
+  margin-top: 50px;
+  overflow-x: hidden;
+}
+
+.one_message {
+  box-shadow: 1px 2px 5px rgb(189, 148, 228);
+  margin: 15px 40px;
+  /*margin-left: 0; */
+  background: rgba(226, 226, 231, 0.8);
+  border-radius: 10px;
+  height: 100%;
+  width: 60%;
+  list-style-type: none;
+}
+.mystyle {
+  background: rgb(150, 204, 174);
+  align-self: flex-end;
+}
+.timebox {
+  position: relative;
+  top: -20px;
+  font-size: 10px;
+  text-align-last: left;
+}
+.messagebox {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  margin-left: 0px;
+  height: 80%;
+  margin-top: 0;
+}
+.frombox {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: 40px;
+  left: -60px;
+  font-size: 11px;
+}
+.frombox_user {
+  max-width: 40px;
+  flex-wrap: wrap;
+  word-wrap: break-word;
+  margin: 0;
+}
+.user_pic {
+  position: relative;
+  left: 0px;
+  border-radius: 30px;
+  border: 1 px solid gray;
+}
+.autorization {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.autorization_header {
+}
+.autorization_publish input {
+  padding: 15px;
+  margin: 15px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px gray;
+}
+#user_name {
+}
+.autorization_button {
+  text-transform: uppercase;
+}
+.button_incognito {
+  padding: 10px;
+  margin: 0 15px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px gray;
+}
+.button_incognito h5 {
+  margin: 0;
+  padding: 0;
+}
+.button_incognito:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.changeName {
+  position: absolute;
+  top: 3%;
+  right: 3%;
+}
+/* //form send message */
+.form_send input {
+  padding: 15px;
+  margin: 15px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px rgb(185, 209, 188);
+}
+.user_name {
+  color: white;
+}
+.form_send-sumit {
+  background: rgb(187, 219, 194);
+}
+.form_send-sumit:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
