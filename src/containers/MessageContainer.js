@@ -63,7 +63,7 @@ class MessagerContainer extends React.Component {
       setBackground(this)
       function addStyles() {
         var objDiv = document.getElementsByClassName('list_container')[0]
-        if (objDiv.scrollHeight) {
+        if (objDiv) {
           objDiv.scrollTop = objDiv.scrollHeight
         }
       }
