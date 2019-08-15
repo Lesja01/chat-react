@@ -7,7 +7,7 @@ import { connect } from 'react-redux'
 import { NotificationContainer, NotificationManager } from 'react-notifications'
 import 'react-notifications/lib/notifications.css'
 
-const URL = 'ws://st-chat.shas.tel'
+const URL = 'wss://wssproxy.herokuapp.com/'
 var socket = new WebSocket(URL)
 
 class MessagerContainer extends React.Component {
