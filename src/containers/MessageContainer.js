@@ -50,10 +50,7 @@ class MessagerContainer extends React.Component {
       })
       this.setState({ messages: bufer })
       //scroll to bottom
-      var objDiv = document.getElementsByClassName('list_container')[0]
-      if (objDiv.scrollHeight) {
-        objDiv.scrollTop = objDiv.scrollHeight
-      }
+
       function setBackground(th) {
         let users = document.getElementsByClassName('frombox_user')
         let name = th.state.user
@@ -64,6 +61,13 @@ class MessagerContainer extends React.Component {
         }
       }
       setBackground(this)
+      function addStyles() {
+        var objDiv = document.getElementsByClassName('list_container')[0]
+        if (objDiv.scrollHeight) {
+          objDiv.scrollTop = objDiv.scrollHeight
+        }
+      }
+      setTimeout(addStyles, 100)
     }.bind(this)
 
     socket.onclose = () => {
@@ -101,6 +105,7 @@ class MessagerContainer extends React.Component {
     wsSend(message)
     return false
   }
+
   setName() {
     var userName = document.getElementById('user_name').value.toString()
     this.setState({ user: userName })
