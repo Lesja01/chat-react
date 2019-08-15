@@ -16,12 +16,7 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
-.root {
-}
-.container {
-  /* display: flex; */
-  /* flex-direction: row; */
-}
+
 #subscribe {
   display: flex;
   margin: 0 auto;
@@ -42,7 +37,6 @@ code {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  /* margin: 0 auto; */
   margin-top: 50px;
   overflow-x: hidden;
 }
@@ -50,7 +44,6 @@ code {
 .one_message {
   box-shadow: 1px 2px 5px rgb(189, 148, 228);
   margin: 15px 40px;
-  /*margin-left: 0; */
   background: rgba(226, 226, 231, 0.8);
   border-radius: 10px;
   height: 100%;
@@ -75,6 +68,16 @@ code {
   height: 80%;
   margin-top: 0;
 }
+.message {
+  flex-wrap: wrap;
+  width: 80%;
+  max-width: 600px;
+  margin-right: 5px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  margin-bottom: 15px;
+}
+
 .frombox {
   position: relative;
   display: flex;
@@ -102,16 +105,13 @@ code {
   align-items: center;
 }
 
-.autorization_header {
-}
 .autorization_publish input {
   padding: 15px;
   margin: 15px;
   border-radius: 5px;
   box-shadow: 1px 1px 5px gray;
 }
-#user_name {
-}
+
 .autorization_button {
   text-transform: uppercase;
 }

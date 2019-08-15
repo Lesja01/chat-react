@@ -83,7 +83,7 @@ class MessagerContainer extends React.Component {
   setmessage(e) {
     e.preventDefault()
     if (socket.readyState === socket.CLOSED) {
-      socket = new WebSocket('URL')
+      socket = new WebSocket(URL)
     }
     // send message publish
     var outgoingMessage = document.getElementById('my_message').value.toString()
