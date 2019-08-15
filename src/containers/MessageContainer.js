@@ -4,6 +4,8 @@ import Messager from '../components/Messager'
 import Autorization from '../components/Autorization'
 import ActionTypes from '../constants/actionTypes'
 import { connect } from 'react-redux'
+import { NotificationContainer, NotificationManager } from 'react-notifications'
+import 'react-notifications/lib/notifications.css'
 
 const URL = 'ws://st-chat.shas.tel'
 var socket = new WebSocket(URL)
@@ -36,6 +38,7 @@ class MessagerContainer extends React.Component {
     socket.onopen = () => {
       // on connecting, do nothing but log it to the console
       console.log('connected')
+      NotificationManager.info('connected')
     }
 
     // обработчик входящих сообщений
@@ -65,6 +68,7 @@ class MessagerContainer extends React.Component {
 
     socket.onclose = () => {
       console.log('disconnected')
+      NotificationManager.warning('Warning message', 'disconnected', 3000)
       // automatically try to reconnect on connection loss
       this.setState({
         socket: new WebSocket(URL),
@@ -107,19 +111,42 @@ class MessagerContainer extends React.Component {
     localStorage.setItem('user', 'incognito')
     this.setState({ user: 'incognito' })
   }
-
+  createNotification = (type) => {
+    return () => {
+      switch (type) {
+        case 'info':
+          NotificationManager.info('Info message')
+          break
+        case 'success':
+          NotificationManager.success('Success message', 'Title here')
+          break
+        case 'warning':
+          NotificationManager.warning('Warning message', 'Close after 3000ms', 3000)
+          break
+        case 'error':
+          NotificationManager.error('Error message', 'Click me!', 5000, () => {
+            alert('callback')
+          })
+          break
+      }
+    }
+  }
   render() {
     // showMessage(incomingMessage)
     if (this.state.user === 'incognito' || this.state.user === '') {
       return <Autorization setName={this.setName} />
     } else {
       return (
-        <Messager
-          name={this.state.user}
-          messages={this.state.messages}
-          setmessage={this.setmessage}
-          changeName={this.changeName}
-        />
+        <div>
+          {' '}
+          <Messager
+            name={this.state.user}
+            messages={this.state.messages}
+            setmessage={this.setmessage}
+            changeName={this.changeName}
+          />
+          <NotificationContainer />
+        </div>
       )
     }
   }
